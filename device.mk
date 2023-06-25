@@ -120,6 +120,8 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.1-service
 
 # Camera
+#$(call inherit-product-if-exists, vendor/oplus/camera/opluscamera.mk)
+
 PRODUCT_PACKAGES += \
     libcamera_metadata_shim
 

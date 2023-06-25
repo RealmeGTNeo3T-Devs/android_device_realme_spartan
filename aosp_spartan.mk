@@ -11,16 +11,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from spartan device
 $(call inherit-product, device/realme/spartan/device.mk)
 
-# Inherit some common DerpFest stuff.
-$(call inherit-product, vendor/derp/config/common_full_phone.mk)
+# Inherit some common VoidUI stuff.
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
-# Rom Stuff
-DERP_BUILDTYPE := Official
-EXTRA_UDFPS_ANIMATIONS := true
-USE_LEGACY_BOOTANIMATION := true
-TARGET_NOT_USES_BLUR := true
 
-PRODUCT_NAME := derp_spartan
+
+PRODUCT_NAME := aosp_spartan
 PRODUCT_DEVICE := spartan
 PRODUCT_MANUFACTURER := realme
 PRODUCT_BRAND := realme
@@ -28,6 +24,16 @@ PRODUCT_MODEL := realme GT Neo 3T
 
 PRODUCT_SYSTEM_NAME := RMX3371
 PRODUCT_SYSTEM_DEVICE := RE54E4L1
+
+#Rom Stuff
+TARGET_BOOT_ANIMATION_RES := 1440
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_INCLUDE_LIVE_WALLPAPERS := true
+TARGET_SUPPORTS_QUICK_TAP  := true
+
+# VoidUI Maintainer Flags
+VOID_MAINTAINER := Amrutesh
+CUSTOM_BUILD_TYPE := UNOFFICIAL
 
 PRODUCT_GMS_CLIENTID_BASE := android-oppo
 
