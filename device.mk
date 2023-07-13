@@ -70,6 +70,10 @@ AUDIO_HAL_DIR := hardware/qcom-caf/sm8250/audio
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/audio/odm,$(TARGET_COPY_OUT_ODM)/etc) \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/audio/vendor,$(TARGET_COPY_OUT_VENDOR)/etc)
+ifeq ($(CONFIG_LOCALVERSION),~MiNaZuKi)
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/audio/vendor-minazuki,$(TARGET_COPY_OUT_VENDOR)/etc)
+endif
 
 PRODUCT_COPY_FILES += \
     $(AUDIO_HAL_DIR)/configs/kona/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
